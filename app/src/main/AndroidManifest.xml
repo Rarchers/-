@@ -33,7 +33,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splash">
+        <activity android:name=".Acticitys.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +46,8 @@
         <activity android:name=".Login_Register.ForgetPwdActivity" />
         <activity android:name=".Login_Register.ForgetPwd_two" />
         <activity android:name=".Acticitys.MainActivity" />
-        <activity android:name=".Acticitys.Setting_ME"></activity>
+        <activity android:name=".Acticitys.Setting_ME" />
+        <activity android:name=".Acticitys.AllOders"></activity>
     </application>
 
 </manifest>

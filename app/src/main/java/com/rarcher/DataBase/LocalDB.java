@@ -29,7 +29,23 @@ public class LocalDB extends SQLiteOpenHelper {
             "identitycode text,"+//身份证
             "sex text," + //sex   male->男   female->女
             "name text) ";
+    public static final String Service = "create table Service ("
 
+            + "id integer primary key autoincrement," +
+            "name text," +
+            "data text," +
+            "status integer," + //预定状态::  0 -> 未进行  1 ->进行中  2->已结束
+            "start_time text," +
+            "end_time text,"+
+            "location text," +
+            "special_request text," +
+            "context text," +
+            "codeID text," +
+            "service_name text," +
+            "service_sex text," +
+            "service_age integer," +
+            "service_phones text," +
+            "service_code text) ";
 
     private Context context;
     public LocalDB(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -40,11 +56,13 @@ public class LocalDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Creat_Book);
+        db.execSQL(Service);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists Users");
+        db.execSQL("drop table if exists Service");
         onCreate(db);
     }
 
@@ -98,5 +116,22 @@ public class LocalDB extends SQLiteOpenHelper {
         db.insert("Users", null, values);
         Toast.makeText(context, "注册成功", Toast.LENGTH_SHORT).show();
     }
+
+    public static void addData_service(String context,String data,String start_time,String end_time,String special,String codeID,LocalDB localDB,int status){
+        SQLiteDatabase db = localDB.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name",query_user(Nowusers.getPhone(),localDB).getName());
+        values.put("context",context);
+        values.put("codeID",codeID);
+        values.put("data",data);
+        values.put("status",status);
+        values.put("start_time",start_time);
+        values.put("end_time",end_time);
+        values.put("special_request",special);
+        db.insert("Service", null, values); // 插入数据
+        values.clear();
+    }
+
+
 
 }

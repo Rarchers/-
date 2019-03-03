@@ -1,4 +1,4 @@
-package com.rarcher;
+package com.rarcher.Acticitys;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.rarcher.Login_Register.LoginActivity;
+import com.rarcher.R;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
