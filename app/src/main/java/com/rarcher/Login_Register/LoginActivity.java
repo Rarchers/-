@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.rarcher.Acticitys.MainActivity;
 import com.rarcher.DataBase.LocalDB;
+import com.rarcher.DataBase.Nowusers;
 import com.rarcher.DataBase.Users;
 import com.rarcher.R;
 
@@ -420,6 +421,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
             closeloading();
+            Nowusers.setPhone(account);
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.putExtra("user", account);
             startActivity(intent);

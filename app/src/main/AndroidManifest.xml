@@ -26,7 +26,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -46,7 +45,8 @@
         <activity android:name=".Login_Register.Register_two" />
         <activity android:name=".Login_Register.ForgetPwdActivity" />
         <activity android:name=".Login_Register.ForgetPwd_two" />
-        <activity android:name=".Acticitys.MainActivity"></activity>
+        <activity android:name=".Acticitys.MainActivity" />
+        <activity android:name=".Acticitys.Setting_ME"></activity>
     </application>
 
 </manifest>

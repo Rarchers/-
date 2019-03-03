@@ -5,7 +5,7 @@
     android:id="@+id/lay_register_two_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_dark"
+    android:background="@color/bars"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
