@@ -48,7 +48,7 @@ public class Online extends Fragment  implements TextWatcher {
 
     private TextView sev;
     private ListView listView;
-    private String[] home = {"上门送餐","集中用餐","上门做餐","上门家务","上门修理","陪同出行","上门聊天","陪同就医","陪同复建","陪同检查","外出游玩"};
+    private String[] home = {"上门送餐","集中用餐","上门做餐","上门清洁","上门洗碗","地面清洁","全面修理","陪同出行","陪同助浴","陪同就医","陪同复健","陪同检查","上门聊天","陪同游玩"};
 
     /*
     * 订单初始化
@@ -63,7 +63,6 @@ public class Online extends Fragment  implements TextWatcher {
     int mHour=99,mMinute=99,endhour=99,endminute=99;
     double mYear=9999999,mDay,mMonth;
     String service=home[0],special_request="";
-    private AlertDialog alertDialog2; //单选框
     private LinearLayout choose_data,choose_time,choose_end_time;
     private TextView mservice,mdata,mtime,mend_time;
     private EditText special;

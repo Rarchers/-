@@ -2,6 +2,7 @@ package com.rarcher.Fragments;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.rarcher.Acticitys.FigureSafe;
 import com.rarcher.DataBase.LocalDB;
 import com.rarcher.DataBase.Nowusers;
 import com.rarcher.R;
@@ -75,7 +77,8 @@ public class Convience extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int positon, long l) {
                 switch (positon) {
                     case 3 :
-
+                        Intent intent = new Intent(getActivity(), FigureSafe.class);
+                        startActivity(intent);
                         
                         break;
                 }

@@ -1,6 +1,8 @@
 package com.rarcher.Acticitys;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -66,6 +68,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         meImg = (ImageView) findViewById(R.id.iv_me);
         convienceImg = (ImageView) findViewById(R.id.iv_convenience);
         accidentImg = (ImageView) findViewById(R.id.iv_accident);
+        accidentLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Intent intent =  new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + 10086));//跳转到拨号界面，同时传递电话号码
+                startActivity(intent);
+                return true;
+            }
+        });
 
     }
 
