@@ -5,11 +5,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.rarcher.Fragments.Accident;
@@ -219,6 +221,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             transaction.hide(currentFragment).show(fragment).commit();
         }
         currentFragment = fragment;
+    }
+
+    //退出时的时间
+    private long mExitTime;
+    //对返回键进行监听
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            exit();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+    //退出方法
+    private void exit() {
+        if ((System.currentTimeMillis() - mExitTime) > 2000) {
+            Toast.makeText(MainActivity.this, "再按一次退出应用", Toast.LENGTH_SHORT).show();
+            mExitTime = System.currentTimeMillis();
+        } else {
+            //用户退出处理
+            finish();
+            System.exit(0);
+        }
     }
 
 
