@@ -41,6 +41,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
+import com.rarcher.Acticitys.AllOders;
 import com.rarcher.Acticitys.Setting_ME;
 import com.rarcher.DataBase.LocalDB;
 import com.rarcher.DataBase.Nowusers;
@@ -73,7 +74,7 @@ import static android.app.Activity.RESULT_OK;
 public class Me extends Fragment {
     private DialogHandler dialogHandler;
     private Activity activity;
-    private LinearLayout contact,update,setting;
+    private LinearLayout contact,update,setting,tooders;
     RelativeLayout myself;
     private Button offlineDownloadBtn;//离线下载
     private Button clearCacheBtn,quit;//清除缓存
@@ -120,6 +121,7 @@ public class Me extends Fragment {
         //offlineDownloadBtn = (Button) view.findViewById(R.id.settings_offline_download_btn);
         clearCacheBtn = (Button) view.findViewById(R.id.settings_clear_cache_btn);
         cacheSizeTv = (TextView) view.findViewById(R.id.settings_cache_size_tv);
+        tooders = view.findViewById(R.id.to_oders);
         myself = view.findViewById(R.id.myself);
         image = view.findViewById(R.id.im);
         contact = view.findViewById(R.id.contact_me);
@@ -166,6 +168,13 @@ public class Me extends Fragment {
                 ToastUtils.show(activity, "开发中~");
             }
         });*/
+        tooders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),AllOders.class);
+                startActivity(intent);
+            }
+        });
         clearCacheBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

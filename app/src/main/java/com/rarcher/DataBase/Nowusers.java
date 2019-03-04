@@ -7,6 +7,7 @@ package com.rarcher.DataBase;
 public class Nowusers {
 
    static String phone;
+   static String name;
 
     private static Nowusers instance = null;
 
@@ -20,6 +21,15 @@ public class Nowusers {
 
     public static String getPhone() {
         return phone;
+    }
+
+    public static String getName() {
+        return name;
+    }
+
+    public static void setName(String name) {
+
+        Nowusers.name = name;
     }
 
     public static void setPhone(String phone) {

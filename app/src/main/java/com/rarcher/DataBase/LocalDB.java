@@ -117,10 +117,10 @@ public class LocalDB extends SQLiteOpenHelper {
         Toast.makeText(context, "注册成功", Toast.LENGTH_SHORT).show();
     }
 
-    public static void addData_service(String context,String data,String start_time,String end_time,String special,String codeID,LocalDB localDB,int status){
+    public static void addData_service(String username,String context,String data,String start_time,String end_time,String special,String codeID,LocalDB localDB,int status){
         SQLiteDatabase db = localDB.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("name",query_user(Nowusers.getPhone(),localDB).getName());
+        values.put("name",username);
         values.put("context",context);
         values.put("codeID",codeID);
         values.put("data",data);

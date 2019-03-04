@@ -47,7 +47,11 @@
         <activity android:name=".Login_Register.ForgetPwd_two" />
         <activity android:name=".Acticitys.MainActivity" />
         <activity android:name=".Acticitys.Setting_ME" />
-        <activity android:name=".Acticitys.AllOders"></activity>
+        <activity android:name=".Acticitys.AllOders" />
+        <activity
+            android:name=".Acticitys.Oders"
+            android:label="@string/title_activity_oders"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -62,7 +62,7 @@ public class Online extends Fragment  implements TextWatcher {
     Boolean postable = false;
     int mHour=99,mMinute=99,endhour=99,endminute=99;
     double mYear=9999999,mDay,mMonth;
-    String service,special_request="";
+    String service=home[0],special_request="";
     private AlertDialog alertDialog2; //单选框
     private LinearLayout choose_data,choose_time,choose_end_time;
     private TextView mservice,mdata,mtime,mend_time;
@@ -153,7 +153,8 @@ public class Online extends Fragment  implements TextWatcher {
                      mend_time.setText("");
                      service=final_date=final_time=final_end_time=special_request=uuid="";
                      special.setText("");
-                    sev.setText("服务: "+home[x]);
+                     sev.setText("服务: "+home[x]);
+                     service = home[x];
                 }
             });
             builder.show();
@@ -189,7 +190,7 @@ public class Online extends Fragment  implements TextWatcher {
                     //TODO::发送数据给云端数据库,告诉社工们
                     uuid = UUID.randomUUID().toString();//当前小票的唯一编号
 
-                    LocalDB.addData_service(service,final_date,final_time,final_end_time,special_request,uuid,localDB,0);
+                    LocalDB.addData_service(Nowusers.getName(),service,final_date,final_time,final_end_time,special_request,uuid,localDB,0);
                     mservice.setText("");
                     mdata.setText("");
                     mtime.setText("");
