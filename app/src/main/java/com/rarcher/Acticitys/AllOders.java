@@ -69,7 +69,7 @@ public class AllOders extends AppCompatActivity {
         collapsingToolbar.setTitle("我的预约");
         initDB();
         init();
-        
+
         listener();
     }
     @Override
@@ -262,6 +262,7 @@ public class AllOders extends AppCompatActivity {
                 has.clear();
                 to.clear();
                 in.clear();
+
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {

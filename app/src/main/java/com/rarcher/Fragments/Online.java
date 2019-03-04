@@ -122,13 +122,16 @@ public class Online extends Fragment  implements TextWatcher {
 
 
     private void checknull(int id){
-        Log.d(TAG, "onClick: "+id);
-        Log.d(TAG, "onClick: "+id);
-        Log.d(TAG, "onClick: "+id);
-        Log.d(TAG, "onClick: "+id);
         final int x = id;
         if (!TextUtils.isEmpty(final_time) || !TextUtils.isEmpty(final_date)|| !TextUtils.isEmpty(final_end_time)|| !TextUtils.isEmpty(special_request)||mHour!=99||mYear!=9999999||endhour!=99) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            Log.d(TAG, "checknull: final_time  "+final_time);
+            Log.d(TAG, "checknull: final_date  "+final_date);
+            Log.d(TAG, "checknull: final_end_time  "+final_end_time);
+            Log.d(TAG, "checknull: special_request  "+special_request);
+            Log.d(TAG, "checknull: mHour  "+mHour);
+            Log.d(TAG, "checknull: mYear  "+mYear);
+            Log.d(TAG, "checknull: endhour  "+endhour);
             builder.setTitle("是否切换?");
             builder.setMessage("是否要放弃当前编辑的订单?");
             builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -191,6 +194,13 @@ public class Online extends Fragment  implements TextWatcher {
                     uuid = UUID.randomUUID().toString();//当前小票的唯一编号
 
                     LocalDB.addData_service(Nowusers.getName(),service,final_date,final_time,final_end_time,special_request,uuid,localDB,0);
+                    final_time="";
+                    final_date="";
+                    final_end_time="";
+                    postable = false;
+                    mHour=99;mMinute=99;endhour=99;endminute=99;
+                    mYear=9999999;mDay=0;mMonth=0;
+                    special_request="";
                     mservice.setText("");
                     mdata.setText("");
                     mtime.setText("");

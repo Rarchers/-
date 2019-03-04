@@ -6,4 +6,11 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <GridView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="100dp"
+        android:numColumns="2"
+        android:verticalSpacing="50dp" />
 </FrameLayout>
