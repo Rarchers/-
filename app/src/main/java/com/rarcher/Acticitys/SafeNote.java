@@ -1,17 +1,20 @@
 package com.rarcher.Acticitys;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -54,16 +57,46 @@ public class SafeNote extends AppCompatActivity {
         queryall();
         safe_note_adapter = new Safe_Note_Adapter(getApplicationContext(),R.layout.safe_listview,datalist);
         lv_safenote.setAdapter(safe_note_adapter);
+
+        lv_safenote.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
+                final Safe_Note_been safe_note_been  = datalist.get(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(SafeNote.this);
+                builder.setTitle("确定?");
+                builder.setMessage("您确定要删除这个备忘录?");
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        delete(safe_note_been.getUid());
+                        refresh();
+                    }
+                });
+                builder.show();
+                return true;
+            }
+        });
         adds = findViewById(R.id.add);
         adds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SafeNote.this,Adding.class);
                 startActivity(intent);
+                finish();
             }
         });
 
 
+    }
+    private void delete(String uid){
+        SQLiteDatabase db = localDB.getWritableDatabase();
+        db.delete("Notes", "uid = ?", new String[] { uid });
     }
 
     private void initDB(){
@@ -83,7 +116,29 @@ public class SafeNote extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void refresh(){
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                datalist.clear();
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        queryall();
+                        safe_note_adapter.notifyDataSetChanged();
+                    }
+                });
+
+            }
+        }).start();
+    }
 
 
     private void queryall(){
@@ -102,9 +157,9 @@ public class SafeNote extends AppCompatActivity {
                 Cursor cursor = db.query("Notes", null, "name = ?", new String[]{Nowusers.getName()}, null, null, null);
                 if (cursor.moveToFirst()) {
                     do {
-                        String title = cursor.getString(cursor.getColumnIndex("context"));
-                        String context = cursor.getString(cursor.getColumnIndex("start_time"));
-                        String uid = cursor.getString(cursor.getColumnIndex("data"));
+                        String title = cursor.getString(cursor.getColumnIndex("title"));
+                        String context = cursor.getString(cursor.getColumnIndex("context"));
+                        String uid = cursor.getString(cursor.getColumnIndex("uid"));
                         Safe_Note_been safe_note_been = new Safe_Note_been(title,uid,context,Nowusers.getName());
                         datalist.add(safe_note_been);
                     } while (cursor.moveToNext());

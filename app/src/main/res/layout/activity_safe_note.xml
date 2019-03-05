@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/gray_light"
     tools:context="com.rarcher.Acticitys.SafeNote">
 
     <android.support.design.widget.AppBarLayout
@@ -66,5 +67,13 @@
     <ListView
         android:id="@+id/lv_safenote"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:headerDividersEnabled="false"
+        android:footerDividersEnabled="false"
+        android:dividerHeight="10dp">
+
+    </ListView>
+
 </LinearLayout>
