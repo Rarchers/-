@@ -56,7 +56,12 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Acticitys.FigureSafe" />
         <activity android:name=".Acticitys.SafeNote" />
-        <activity android:name=".Acticitys.Adding"></activity>
+        <activity android:name=".Acticitys.Adding" />
+        <activity
+            android:name=".Acticitys.Details"
+            android:label="@string/title_activity_details"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Acticitys.List_Been"></activity>
     </application>
 
 </manifest>

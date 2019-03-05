@@ -15,8 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.rarcher.Acticitys.FigureSafe;
+import com.rarcher.Acticitys.List_Been;
 import com.rarcher.DataBase.LocalDB;
 import com.rarcher.DataBase.Nowusers;
 import com.rarcher.R;
@@ -79,7 +81,14 @@ public class Convience extends Fragment {
                     case 3 :
                         Intent intent = new Intent(getActivity(), FigureSafe.class);
                         startActivity(intent);
-                        
+                        break;
+                    case 2:
+                        Toast.makeText(getContext(),"抱歉，此功能还处于完善状态，稍晚时间会上线，请耐心等待",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 0:
+                        Intent intent1= new Intent(getActivity(), List_Been.class);
+                        intent1.putExtra(List_Been.HOSPITAL,List_Been.HOSPITAL);
+                        startActivity(intent1);
                         break;
                 }
             }
