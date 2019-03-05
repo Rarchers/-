@@ -87,6 +87,7 @@ public class FigureSafe extends AppCompatActivity {
             public void onAuthenticationError(int errMsgId, CharSequence errString) {
 
                 Toast.makeText(mContext,errString.toString(),Toast.LENGTH_SHORT).show();
+                showAuthenticationScreen();
                 if (dialog != null  &&dialog.isShowing()){
                     dialog.dismiss();
                 }
@@ -94,30 +95,38 @@ public class FigureSafe extends AppCompatActivity {
 
             @Override
             public void onAuthenticationFailed() {
-
                 Toast.makeText(mContext,"解锁失败",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
-
                 Toast.makeText(mContext,helpString.toString(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAuthenticationSucceeded(FingerprintManagerCompat.AuthenticationResult result) {
-
                 Toast.makeText(mContext,"解锁成功",Toast.LENGTH_SHORT).show();
                 if (dialog != null  &&dialog.isShowing()){
-
                     dialog.dismiss();
-
                 }
-
+                Intent intent = new Intent(FigureSafe.this,SafeNote.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
+    @TargetApi(23)
 
+    /**
+
+     * 锁屏密码
+
+     */
+
+    private void showAuthenticationScreen() {
+       
+
+    }
     //初始化并弹出对话框方法
     private void showDialog() {
 
@@ -129,7 +138,7 @@ public class FigureSafe extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
+        dialog.setCancelable(false);
         dialog.show();
         //此处设置位置窗体大小，我这里设置为了手机屏幕宽度的3/4  注意一定要在show方法调用后再写设置窗口大小的代码，否则不起效果会
         dialog.getWindow().setLayout((ScreenUtils.getScreenWidth(this) / 4 * 3), LinearLayout.LayoutParams.WRAP_CONTENT);

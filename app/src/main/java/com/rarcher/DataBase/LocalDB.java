@@ -29,6 +29,15 @@ public class LocalDB extends SQLiteOpenHelper {
             "identitycode text,"+//身份证
             "sex text," + //sex   male->男   female->女
             "name text) ";
+
+    public static final String Safe_Note = "create table Notes ("
+
+            + "id integer primary key autoincrement," +
+            "title text," +
+            "context text," +
+            "uid text," +
+            "name text) ";
+
     public static final String Service = "create table Service ("
 
             + "id integer primary key autoincrement," +
@@ -57,12 +66,14 @@ public class LocalDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Creat_Book);
         db.execSQL(Service);
+        db.execSQL(Safe_Note);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists Users");
         db.execSQL("drop table if exists Service");
+        db.execSQL("drop table if exists Notes");
         onCreate(db);
     }
 
@@ -129,6 +140,17 @@ public class LocalDB extends SQLiteOpenHelper {
         values.put("end_time",end_time);
         values.put("special_request",special);
         db.insert("Service", null, values); // 插入数据
+        values.clear();
+    }
+
+    public static void addData_note(String name,String context,String title,String uid,LocalDB localDB){
+        SQLiteDatabase db = localDB.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("title",title);
+        values.put("context",context);
+        values.put("uid",uid);
+        values.put("name",name);
+        db.insert("Notes", null, values); // 插入数据
         values.clear();
     }
 

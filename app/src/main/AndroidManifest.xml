@@ -4,9 +4,9 @@
 
     <!-- 各种奇怪的权限 -->
     <!-- 指纹识别 -->
-    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
-    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER"/>
-    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 在SDCard中创建与删除文件权限 -->
@@ -54,7 +54,9 @@
             android:name=".Acticitys.Oders"
             android:label="@string/title_activity_oders"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Acticitys.FigureSafe"></activity>
+        <activity android:name=".Acticitys.FigureSafe" />
+        <activity android:name=".Acticitys.SafeNote" />
+        <activity android:name=".Acticitys.Adding"></activity>
     </application>
 
 </manifest>
