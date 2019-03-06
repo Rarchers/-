@@ -90,6 +90,16 @@ public class Convience extends Fragment {
                         intent1.putExtra(List_Been.HOSPITAL,List_Been.HOSPITAL);
                         startActivity(intent1);
                         break;
+                    case 1:
+                        Intent intent0= new Intent(getActivity(), List_Been.class);
+                        intent0.putExtra(List_Been.HOUSEKEPPING,List_Been.HOUSEKEPPING);
+                        startActivity(intent0);
+                        break;
+                    case 4:
+                        Intent intent4= new Intent(getActivity(), List_Been.class);
+                        intent4.putExtra(List_Been.PROPERTY,List_Been.PROPERTY);
+                        startActivity(intent4);
+                        break;
                 }
             }
         });

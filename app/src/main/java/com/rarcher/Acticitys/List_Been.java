@@ -17,12 +17,16 @@ import com.rarcher.R;
 public class List_Been extends AppCompatActivity {
 
     public final static String HOSPITAL = "hospital";
+    public final static String HOUSEKEPPING = "housekeeping";
+    public final static String PROPERTY = "Property";
 
     Intent intent;
     String item;
     ListView details_lv;
 
-    public final static String[] hospitals = {"保定市第一中心医院","河北大学附属医院","保定市第一中医院","保定252医院","河北省第六人民医院"};
+    public final static String[] hospitals = {"保定市第一中心医院","河北大学附属医院","保定市第一中医院","保定252医院","河北省第六人民医院"};//医疗
+    public final static String[] housekeepings = {"","","","",""};//家政
+    public final static String[] properties = {"","","","",""};//物业
 
 
     @Override
@@ -41,9 +45,17 @@ public class List_Been extends AppCompatActivity {
         item = intent.getStringExtra(HOSPITAL);
         details_lv = findViewById(R.id.details_lv);
         ArrayAdapter<String> hospital_adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,hospitals);
+        ArrayAdapter<String> housekeeping = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,housekeepings);
+        ArrayAdapter<String> property = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,properties);
         switch (item){
             case HOSPITAL:
                 details_lv.setAdapter(hospital_adapter);
+                break;
+            case HOUSEKEPPING:
+                details_lv.setAdapter(housekeeping);
+                break;
+            case PROPERTY:
+                details_lv.setAdapter(property);
                 break;
 
         }

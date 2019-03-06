@@ -202,7 +202,6 @@ public class Me extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), Setting_ME.class);
                 startActivity(intent);
-                getActivity().finish();
             }
         });
 
