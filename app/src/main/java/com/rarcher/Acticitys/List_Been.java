@@ -14,6 +14,8 @@ import android.widget.ListView;
 
 import com.rarcher.R;
 
+import static com.rarcher.Acticitys.Details.POINT;
+
 public class List_Been extends AppCompatActivity {
 
     public final static String HOSPITAL = "hospital";
@@ -52,7 +54,10 @@ public class List_Been extends AppCompatActivity {
                 details_lv.setAdapter(hospital_adapter);
                 break;
             case HOUSEKEPPING:
-                details_lv.setAdapter(housekeeping);
+                Intent intent = new Intent(List_Been.this,Details.class);
+                intent.putExtra(POINT,HOUSEKEPPING);
+                startActivity(intent);
+                finish();
                 break;
             case PROPERTY:
                 details_lv.setAdapter(property);
@@ -66,7 +71,7 @@ public class List_Been extends AppCompatActivity {
                 switch (item){
                     case HOSPITAL:
                         Intent intent = new Intent(List_Been.this,Details.class);
-                        intent.putExtra(Details.POINT,hospitals[position]);
+                        intent.putExtra(POINT,hospitals[position]);
                         startActivity(intent);
                         break;
                 }

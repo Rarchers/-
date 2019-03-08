@@ -2,8 +2,11 @@ package com.rarcher.Fragments;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -92,13 +95,32 @@ public class Convience extends Fragment {
                         break;
                     case 1:
                         Intent intent0= new Intent(getActivity(), List_Been.class);
-                        intent0.putExtra(List_Been.HOUSEKEPPING,List_Been.HOUSEKEPPING);
+                        intent0.putExtra(List_Been.HOSPITAL,List_Been.HOUSEKEPPING);
                         startActivity(intent0);
                         break;
                     case 4:
                         Intent intent4= new Intent(getActivity(), List_Been.class);
-                        intent4.putExtra(List_Been.PROPERTY,List_Been.PROPERTY);
+                        intent4.putExtra(List_Been.HOSPITAL,List_Been.HOUSEKEPPING);
                         startActivity(intent4);
+                        break;
+                    case 5:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                        builder.setTitle("法律援助");
+                        builder.setMessage("您是否需要拨打律师电话?");
+                        builder.setPositiveButton("是的", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent =  new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "13981180244"));//跳转到拨号界面，同时传递电话号码
+                                startActivity(intent);
+                            }
+                        });
+                        builder.setNegativeButton("再看看", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                        builder.show();
                         break;
                 }
             }

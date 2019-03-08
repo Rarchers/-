@@ -66,6 +66,13 @@ public class Details extends AppCompatActivity {
                 details.setText(data);
                 tel = 0312-5079256;
                 break;
+            case List_Been.HOUSEKEPPING:
+                data = Infomations.E城E家;
+                details.setText(data);
+                tel = 0731-85495581;
+                break;
+
+
 
         }
 
