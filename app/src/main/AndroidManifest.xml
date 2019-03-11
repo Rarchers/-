@@ -61,7 +61,8 @@
             android:name=".Acticitys.Details"
             android:label="@string/title_activity_details"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Acticitys.List_Been"></activity>
+        <activity android:name=".Acticitys.List_Been" />
+        <activity android:name=".Acticitys.LifeArrange"></activity>
     </application>
 
 </manifest>

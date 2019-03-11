@@ -21,6 +21,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.rarcher.Acticitys.FigureSafe;
+import com.rarcher.Acticitys.LifeArrange;
 import com.rarcher.Acticitys.List_Been;
 import com.rarcher.DataBase.LocalDB;
 import com.rarcher.DataBase.Nowusers;
@@ -102,6 +103,10 @@ public class Convience extends Fragment {
                         Intent intent4= new Intent(getActivity(), List_Been.class);
                         intent4.putExtra(List_Been.HOSPITAL,List_Been.HOUSEKEPPING);
                         startActivity(intent4);
+                        break;
+                    case 6:
+                        Intent intent2 = new Intent(getActivity(), LifeArrange.class);
+                        startActivity(intent2);
                         break;
                     case 5:
                         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
