@@ -1,9 +1,123 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.rarcher.Fragments.Home">
 
     <!-- TODO: Update blank fragment layout -->
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="332dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:maxLines="1"
+                android:hint="搜索您需要的服务" />
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/search_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search_blue_24dp" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <include
+                    android:id="@+id/news"
+                    layout="@layout/mian_item"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true">
+
+                </include>
+
+                <include
+                    android:id="@+id/yangsheng"
+                    layout="@layout/mian_item"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/news">
+
+                </include>
+
+                <include
+                    android:id="@+id/zhengce"
+                    layout="@layout/mian_item"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true">
+
+                </include>
+
+                <include
+                    android:id="@+id/quwei"
+                    layout="@layout/mian_item"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="21dp"
+                    android:layout_toEndOf="@+id/zhengce">
+
+                </include>
+
+                <include
+                    android:id="@+id/shenghuo"
+                    layout="@layout/mian_item"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true">
+
+                </include>
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/small_lv"
+                android:layout_width="match_parent"
+                android:layout_height="279dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

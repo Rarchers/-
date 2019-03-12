@@ -1,13 +1,19 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="com.rarcher.Fragments.Accident">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="236dp"
+        android:text="您好，这里是紧急救助功能。当发生紧急情况时，长按此键5秒以上，我们将自动联系您的紧急联系人，对您实施及时救助，随时守护您的平安！"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-</FrameLayout>
+</RelativeLayout>

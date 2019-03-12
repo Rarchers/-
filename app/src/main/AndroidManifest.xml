@@ -47,7 +47,9 @@
         <activity android:name=".Login_Register.Register_two" />
         <activity android:name=".Login_Register.ForgetPwdActivity" />
         <activity android:name=".Login_Register.ForgetPwd_two" />
-        <activity android:name=".Acticitys.MainActivity" />
+        <activity android:name=".Acticitys.MainActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
         <activity android:name=".Acticitys.Setting_ME" />
         <activity android:name=".Acticitys.AllOders" />
         <activity
