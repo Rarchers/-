@@ -12,13 +12,12 @@
 
         <ImageView
             android:id="@+id/ac_title"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_avatar_cat"
-          />
+            android:src="@drawable/ic_avatar_cat" />
 
         <TextView
             android:id="@+id/news_title"
@@ -27,7 +26,6 @@
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:layout_toRightOf="@id/ac_title"
-            android:maxLines="1"
             android:lineSpacingMultiplier="1.2"
             android:paddingLeft="10dp"
             android:text="喵喵喵"

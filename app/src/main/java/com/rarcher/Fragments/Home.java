@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -23,6 +24,7 @@ import com.rarcher.Adapter.Events;
 import com.rarcher.Adapter.Events_Adapter;
 import com.rarcher.Adapter.RecyAdapter;
 import com.rarcher.R;
+import com.rarcher.Utils.Toasts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +46,7 @@ public class Home extends Fragment implements RecyAdapter.OnItemClickListener {
     private List<Events> eventsList = new ArrayList<>();
     Events_Adapter adapter;
     RecyclerView recyclerview;
-    private Integer[] mImgIds = {R.drawable.html, R.drawable.you_define_me, R.drawable.html, R.drawable.you_define_me, R.drawable.html, R.drawable.you_define_me, R.drawable.html, R.drawable.you_define_me};
+    private Integer[] mImgIds = {R.drawable.s63857b162da324acddebb0bbcc1e04c, R.drawable.b6c4f0febd8fc43feaa985037c71378, R.drawable.s8s9772721c258b5a0c59f7e5991742a8, R.drawable.s3d771305afa1ba4e9d08ca1016fd86d};
     private List<Integer> datas = new ArrayList<>();
     private RecyAdapter recyAdapter;
     private Handler mHandler = new Handler();
@@ -119,21 +121,16 @@ public class Home extends Fragment implements RecyAdapter.OnItemClickListener {
         listView.setLayoutParams(params);
     }
     private void init_events(){
-        for (int i= 0;i<10;i++){
-            Events events = new Events("华北电力大学",R.drawable.ic_avatar_cat);
+        for (int i= 0;i<2;i++){
+            Events events = new Events("一位计生官员眼中的大国养老",R.drawable.s63857b162da324acddebb0bbcc1e04c);
             eventsList.add(events);
-            Events events1 = new Events("计算机系",R.drawable.ic_avatar_bear);
+            Events events1 = new Events("全国政协委员刘卫昌到保定市调研失独家庭特扶模式",R.drawable.b6c4f0febd8fc43feaa985037c71378);
             eventsList.add(events1);
-            Events events2 = new Events("社工",R.drawable.ic_avatar_monkey);
+            Events events2 = new Events("暖心续航·风雨同舟 法律护航”防范知识讲座圆满结束",R.drawable.s8s9772721c258b5a0c59f7e5991742a8);
             eventsList.add(events2);
-            Events events3 = new Events("保定校区",R.drawable.ic_avatar_panda);
+            Events events3 = new Events("暖心续航·心灵之“粥”活动圆满结束",R.drawable.s3d771305afa1ba4e9d08ca1016fd86d);
             eventsList.add(events3);
-            Events events4 = new Events("北京校区",R.drawable.ic_avatar_pig);
-            eventsList.add(events4);
-            Events events5= new Events("华北电力高中",R.drawable.ic_avatar_rhino);
-            eventsList.add(events5);
-            Events events6= new Events("华北Gay力高中",R.drawable.ic_avatar_raccoon);
-            eventsList.add(events6);
+
         }
     }
     @Override
@@ -156,6 +153,13 @@ public class Home extends Fragment implements RecyAdapter.OnItemClickListener {
         initRecy();
       //  img.setImageResource(datas.get(0));
         recyAdapter.setOnItemClickListener(this);
+        small_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Events events = eventsList.get(position);
+                Toast.makeText(getContext(),"当前点击: "+events.getTitle(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -182,7 +186,7 @@ public class Home extends Fragment implements RecyAdapter.OnItemClickListener {
     }
     @Override
     public void onItemClick(View view, int tag) {
-        Toast.makeText(getContext(), "第" + tag + "张图片被点击了", Toast.LENGTH_SHORT).show();
+        Toasts.Toasts(getContext(),"第" + tag + "张图片被点击了");
     }
 
     Runnable scrollRunnable = new Runnable() {
