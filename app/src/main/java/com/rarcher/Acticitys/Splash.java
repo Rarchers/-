@@ -64,7 +64,6 @@ public class Splash extends AppCompatActivity {
     /*
     * 沙雕谷歌,辣鸡Android P 辣鸡Android 9.0
     * 利用反射吧弹窗怼回去
-    *
     * */
 
     private void closeAndroidPDialog() {

@@ -86,11 +86,11 @@ public class Home extends Fragment implements RecyAdapter.OnItemClickListener {
         zhengcetv.setText("政策");
         quweitv.setText("趣味");
 
-        newsiv.setImageResource(R.drawable.figure);
-        lifeiv.setImageResource(R.drawable.figure);
-        yangshengiv.setImageResource(R.drawable.figure);
-        zhengceiv.setImageResource(R.drawable.figure);
-        quweiiv.setImageResource(R.drawable.figure);
+        newsiv.setImageResource(R.drawable.newss);
+        lifeiv.setImageResource(R.drawable.lifeinfo);
+        yangshengiv.setImageResource(R.drawable.livelong);
+        zhengceiv.setImageResource(R.drawable.paper);
+        quweiiv.setImageResource(R.drawable.interst);
 
         init_events();
         adapter = new Events_Adapter(getContext(),R.layout.events_items,eventsList);

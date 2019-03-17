@@ -65,7 +65,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true">
+                    android:layout_centerVertical="true">
 
                 </include>
 
@@ -74,7 +74,7 @@
                     layout="@layout/mian_item"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_alignParentTop="true"
+                    android:layout_alignTop="@+id/news"
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@+id/news">
 
@@ -85,7 +85,7 @@
                     layout="@layout/mian_item"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_alignParentTop="true"
+                    android:layout_alignTop="@+id/yangsheng"
                     android:layout_centerHorizontal="true">
 
                 </include>
@@ -95,9 +95,9 @@
                     layout="@layout/mian_item"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="21dp"
-                    android:layout_toEndOf="@+id/zhengce">
+                    android:layout_alignTop="@+id/zhengce"
+                    android:layout_marginEnd="19dp"
+                    android:layout_toStartOf="@+id/shenghuo">
 
                 </include>
 
@@ -107,7 +107,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true">
+                    android:layout_alignTop="@+id/quwei">
 
                 </include>
             </RelativeLayout>
