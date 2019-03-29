@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             homeImg.setImageResource(R.mipmap.home_3_glyph_24);
             onlineImg.setImageResource(R.mipmap.calendar_2_outline_24);
             meImg.setImageResource(R.mipmap.single_01_outline_24);
-            convienceImg.setImageResource(R.mipmap.handout_outline_32);
+            convienceImg.setImageResource(R.mipmap.handout_outline_24);
             accidentImg.setImageResource(R.mipmap.phone_outline_24);
         }
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         homeImg.setImageResource(R.mipmap.home_3_glyph_24);
         onlineImg.setImageResource(R.mipmap.calendar_2_outline_24);
         meImg.setImageResource(R.mipmap.single_01_outline_24);
-        convienceImg.setImageResource(R.mipmap.handout_outline_32);
+        convienceImg.setImageResource(R.mipmap.handout_outline_24);
         accidentImg.setImageResource(R.mipmap.phone_outline_24);
     }
     /**
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         homeImg.setImageResource(R.mipmap.home_3_outline_24);
         onlineImg.setImageResource(R.mipmap.calendar_2_glyph_24);
         meImg.setImageResource(R.mipmap.single_01_outline_24);
-        convienceImg.setImageResource(R.mipmap.handout_outline_32);
+        convienceImg.setImageResource(R.mipmap.handout_outline_24);
         accidentImg.setImageResource(R.mipmap.phone_outline_24);
 
     }
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         homeImg.setImageResource(R.mipmap.home_3_outline_24);
         onlineImg.setImageResource(R.mipmap.calendar_2_outline_24);
         meImg.setImageResource(R.mipmap.single_01_outline_24);
-        convienceImg.setImageResource(R.mipmap.handout_glyph_32);
+        convienceImg.setImageResource(R.mipmap.handout_glyph_24);
         accidentImg.setImageResource(R.mipmap.phone_outline_24);
 
     }
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         homeImg.setImageResource(R.mipmap.home_3_outline_24);
         onlineImg.setImageResource(R.mipmap.calendar_2_outline_24);
         meImg.setImageResource(R.mipmap.single_01_outline_24);
-        convienceImg.setImageResource(R.mipmap.handout_outline_32);
+        convienceImg.setImageResource(R.mipmap.handout_outline_24);
         accidentImg.setImageResource(R.mipmap.phone_glyph_24);
 
     }
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         homeImg.setImageResource(R.mipmap.home_3_outline_24);
         onlineImg.setImageResource(R.mipmap.calendar_2_outline_24);
         meImg.setImageResource(R.mipmap.single_01_glyph_24);
-        convienceImg.setImageResource(R.mipmap.handout_outline_32);
+        convienceImg.setImageResource(R.mipmap.handout_outline_24);
         accidentImg.setImageResource(R.mipmap.phone_outline_24);
 
     }

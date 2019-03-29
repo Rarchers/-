@@ -22,9 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_alignParentBottom="true"
+            android:baselineAligned="true"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:baselineAligned="true">
+            android:orientation="horizontal">
 
             <RelativeLayout
                 android:id="@+id/rl_home"
@@ -55,7 +55,7 @@
                 android:id="@+id/rl_online"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0" >
+                android:layout_weight="1.0">
 
                 <ImageView
                     android:id="@+id/iv_i_online"
@@ -81,15 +81,15 @@
                 android:id="@+id/rl_accident"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0" >
+                android:layout_weight="1.0">
 
                 <ImageView
                     android:id="@+id/iv_accident"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:src="@mipmap/phone_outline_24"
-                    android:contentDescription="@null" />
+                    android:contentDescription="@null"
+                    android:src="@mipmap/phone_outline_24" />
 
 
                 <TextView
@@ -108,15 +108,17 @@
                 android:id="@+id/rl_convenience"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0" >
+                android:layout_weight="1.0">
 
                 <ImageView
                     android:id="@+id/iv_convenience"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:src="@mipmap/handout_outline_32"
-                    android:contentDescription="@null" />
+                    android:layout_above="@+id/tv_accident"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="23dp"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/handout_outline_24" />
 
 
                 <TextView
@@ -134,15 +136,15 @@
                 android:id="@+id/rl_me"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.0" >
+                android:layout_weight="1.0">
 
                 <ImageView
                     android:id="@+id/iv_me"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:src="@mipmap/single_01_outline_24"
-                    android:contentDescription="@null" />
+                    android:contentDescription="@null"
+                    android:src="@mipmap/single_01_outline_24" />
 
 
                 <TextView
@@ -155,7 +157,6 @@
                     android:textColor="@color/black"
                     android:textSize="12sp" />
             </RelativeLayout>
-
 
 
         </LinearLayout>

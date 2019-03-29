@@ -49,7 +49,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="200dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true">
 
@@ -62,30 +62,29 @@
                 <include
                     android:id="@+id/news"
                     layout="@layout/mian_item"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true">
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true">
 
                 </include>
 
                 <include
                     android:id="@+id/yangsheng"
                     layout="@layout/mian_item"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_alignTop="@+id/news"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@+id/news">
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/zhengce">
 
                 </include>
 
                 <include
                     android:id="@+id/zhengce"
                     layout="@layout/mian_item"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_alignTop="@+id/yangsheng"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true">
 
                 </include>
@@ -93,10 +92,10 @@
                 <include
                     android:id="@+id/quwei"
                     layout="@layout/mian_item"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_alignTop="@+id/zhengce"
-                    android:layout_marginEnd="19dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="11dp"
                     android:layout_toStartOf="@+id/shenghuo">
 
                 </include>
@@ -104,10 +103,10 @@
                 <include
                     android:id="@+id/shenghuo"
                     layout="@layout/mian_item"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignTop="@+id/quwei">
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true">
 
                 </include>
             </RelativeLayout>
