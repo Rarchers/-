@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (!TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(username)) {
             mBtLoginSubmit.setClickable(true);
             mBtLoginSubmit.setBackgroundResource(R.drawable.bg_login_submit);
-            mBtLoginSubmit.setTextColor(getResources().getColor(R.color.white));
+            mBtLoginSubmit.setTextColor(getResources().getColor(R.color.black));
         } else {
             mBtLoginSubmit.setBackgroundResource(R.drawable.bg_login_submit_lock);
             mBtLoginSubmit.setClickable(false);
@@ -387,7 +387,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (!TextUtils.isEmpty(pwd) && !TextUtils.isEmpty(username)) {
             mBtLoginSubmit.setClickable(true);
             mBtLoginSubmit.setBackgroundResource(R.drawable.bg_login_submit);
-            mBtLoginSubmit.setTextColor(getResources().getColor(R.color.white));
+            mBtLoginSubmit.setTextColor(getResources().getColor(R.color.black));
         } else {
             mBtLoginSubmit.setBackgroundResource(R.drawable.bg_login_submit_lock);
             mBtLoginSubmit.setClickable(false);

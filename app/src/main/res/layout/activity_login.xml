@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/bars"
         android:paddingBottom="16dp">
         <!--android:background="@mipmap/bg_login" -->
         <include
@@ -51,7 +50,7 @@
             <View
                 android:layout_width="1px"
                 android:layout_height="22dp"
-                android:background="@color/login_line_color" />
+                android:background="@color/black" />
 
             <EditText
                 android:id="@+id/et_login_username"
@@ -71,8 +70,8 @@
                 android:minLines="1"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/login_line_color"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_dark"
                 android:textCursorDrawable="@null"
                 android:textSize="@dimen/font_16" />
 
@@ -110,7 +109,7 @@
             <View
                 android:layout_width="1px"
                 android:layout_height="22dp"
-                android:background="@color/login_line_color" />
+                android:background="@color/gray_dark" />
 
             <EditText
                 android:id="@+id/et_login_pwd"
@@ -126,8 +125,8 @@
                 android:minLines="1"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/login_line_color"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray_dark"
                 android:textCursorDrawable="@null"
                 android:textSize="@dimen/font_16" />
 
@@ -155,7 +154,7 @@
             android:elevation="0dp"
             android:outlineProvider="none"
             android:text="@string/login"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/font_18"
             tools:targetApi="lollipop" />
 
@@ -170,7 +169,7 @@
             android:elevation="0dp"
             android:outlineProvider="none"
             android:text="@string/login_register_hint"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="@dimen/font_18"
             android:translationZ="0dp"
             tools:targetApi="lollipop" />
@@ -199,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/login_hold_hint"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:visibility="visible" />
 
@@ -212,7 +211,7 @@
                 android:paddingTop="4dp"
                 android:paddingBottom="4dp"
                 android:text="@string/login_forget_hint"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
